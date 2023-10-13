@@ -27,7 +27,7 @@ jobs:
       run: aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/p9p4u4c0
 
     - name: Build,tag, and push the Docker image
-      run: | 
-        docker build . -t jhvargas3112/continous-php-image
+      run: |
+        docker build . -t jhvargas3112/continous_php_image
         docker tag jhvargas3112/continous_php_image:latest public.ecr.aws/p9p4u4c0/jhvargas3112/continous_php_image:latest
         docker push public.ecr.aws/p9p4u4c0/jhvargas3112/continous_php_image:latest
